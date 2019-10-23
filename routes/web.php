@@ -18,7 +18,7 @@ Route::view('/engineering-scale-plan', 'pages.engineering-scale_plan');
 Route::view('/overhead-electrification', 'pages.overhead-electrification');
 Route::view('/signaling-telecommunication', 'pages.signaling-telecommunication');
 Route::view('/construction-supervision', 'pages.construction-supervision');
-Route::view('/3d-mapping-survey', 'pages.d3-mapping-survey');
+Route::view('/3d-mapping-survey', 'pages.3d-mapping-survey');
 Route::view('/drone-uav-survey', 'pages.drone-uav-survey');
 Route::view('/topographical-survey', 'pages.topographical-survey');
 Route::view('/drone-lidar-survey', 'pages.drone-lidar_survey');
@@ -36,11 +36,10 @@ Route::view('/green-building-consultancy', 'pages.green-building-consultancy');
 Route::view('/solar-power-consultancy', 'pages.solar-power-consultancy');
 Route::view('/power-cost-reduction', 'pages.power_cost-reduction');
 Route::view('/health-safety-and-environment', 'pages.health-safety-and_environment');
-Route::view('/maintenance-managementaudit', 'pages.maintenance-managementaudit');
 Route::view('/maintenance-management-audit', 'pages.maintenance-management-audit');
 Route::view('/captive-power-plant', 'pages.captive-power-plant');
 Route::view('/third-party-construction-audit', 'pages.third-party-construction-audit');
-Route::view('/school-education-consulting', 'pages.school-education_consulting');
+Route::view('/school-education-consulting', 'pages.school-education-consulting');
 Route::view('/school-planning-construction-assistance', 'pages.school-planning-construction-assistance');
 Route::view('/affiliation-Legal-assistance', 'pages.affiliation-Legal-assistance');
 Route::view('/Marketing&business-development', 'pages.Marketing-business-development');
@@ -59,8 +58,6 @@ Route::get('/careers', 'CareersController@index');
 Route::get('/job/{job_id}', 'CareersController@jobShow');
 Route::post('/job', 'CareersController@jobStore');
 Route::post('/job-reply', 'CareersController@jobReplyStore');
-
-
 
 Route::get('refreshcaptcha', 'LayoutController@refreshCaptcha');
 
