@@ -18,11 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        .header-v6 .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
-            right: -325px !important;
-        }
-    </style>
 </head>
 <body>
     <div id="app">

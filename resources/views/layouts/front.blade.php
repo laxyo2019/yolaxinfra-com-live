@@ -40,6 +40,11 @@
    
 
    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+   <style>
+      .header-v6 .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
+          right: -325px !important;
+      }
+  </style>
 
 
     <!-- Styles -->
