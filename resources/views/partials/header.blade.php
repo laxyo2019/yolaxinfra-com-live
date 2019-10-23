@@ -112,7 +112,7 @@
 
                                     <li><a href="{{url('/agriculture-survey')}}"><i class="fa fa-chevron-circle-right"></i> Agriculture Survey</a></li>
 
-                                    <li><a href="{{url('/repair_customization')}}">
+                                    <li><a href="{{url('/repair-customization')}}">
                                       <i class="fa fa-chevron-circle-right"></i>Repair and Customization
                                     </a></li>
 
