@@ -138,7 +138,7 @@
 
       <p>Over the four decades of experience into various energy and other related operation &amp; maintenance services prompted us to venture into total Energy related consulting solutions separately.</p>
 
-            <a class="button medium green" href="about.php">Read More</a>
+            <a class="button medium green" href="{{url('about')}}">Read More</a>
         </div>
     </div>
 </div>

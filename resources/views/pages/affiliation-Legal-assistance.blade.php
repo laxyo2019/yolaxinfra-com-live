@@ -2,7 +2,6 @@
 @section('title','How to Get CBSE Affiliation, CBSE Affiliation Consultants | Board Affiliation')
 @section('meta')
   <meta name="description" content="Yolax infra group offer the consultancy about how to get CBSE affiliation and our team of consultant help to get all board affiliation."/>  
-
   <meta name="keywords" content="school affiliation consultants in India, cbse affiliation consultants, how to get cbse affiliation, CBSE affiliation consultancy"/> 
 @endsection
 

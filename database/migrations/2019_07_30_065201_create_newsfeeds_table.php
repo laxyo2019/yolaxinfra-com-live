@@ -15,7 +15,7 @@ class CreateNewsfeedsTable extends Migration
     {
         Schema::create('newsfeeds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->sstring('site_key');
+            $table->string('site_key');
             $table->text('news');
             $table->timestamps();
         });

@@ -1,9 +1,8 @@
 @extends('layouts.front')
 @section('title','Railway Approved Consultant, Railway Siding Approval, Railway Liaisoning, Approval of Plan from Railway, Railway Consultancy Service.')
 @section('meta')
-		<meta name="description" content="Yolax Infra energy is India based railway approved consulting company providing railway siding approval and railway liaisoning Consulting work related to railway siding, railway track linking, Approval of Plan from Railway, railway contract based services. "/> 
-		
-		<meta name="keywords" content="Approval of Plan from Railway, railway liaisoning,railway track linking, railway consultancy service, railway siding approval, Approved Railway Consultancy service, railway approved consultants, railway track linking consultancy, Project Management Consultancy, private railway signaling, railway planning, railway consultancy, railway project, railway consultants "/>
+		<meta name="description" content="Yolax Infra energy is India based railway approved consulting company providing railway consultancy service, railway consultant in India, railway track linking, railway project consultant, railway siding approval and railway liaisoning Consulting work related to railway siding, railway contract based services. "/>  
+		<meta name="keywords" content="railway consultancy service, railway track linking, railway liaisoning, railway consultant in India, railway project consultant, railway siding approval, Approved Railway Consultancy service, railway approved consultants, railway track linking consultancy "/>
 @endsection
 @section('content')
 	<!--  Page Title -->

@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('title','Drone Company |Drone, UAV Survey India | Photogrammetry Services in India')	
 @section('meta')
-  <meta name="description" content="Yolax infra energy is most experienced drone company for aerial survey & Drone, UAV survey in India. We offer 2D/3D modeling survey with using photogrammetry services in India."/>  
-  <meta name="keywords" content="Drone, UAV survey India, drone companies in India, photogrammetry services in India, digital photogrammetry service"/> 
+  <meta name="description" content="Yolax has engaged in providing service of hydrographic surveying with singlebeam and multibeam EchoSounder to further upgrade its technical competency."/>  
+  <meta name="keywords" content="echosounders, singlebeam echosounder, multibeam echosounder, echosounder surveying, echosounder survey"/> 
 @endsection
 @section('content')
 <!--  Page Title -->

@@ -2,7 +2,7 @@
 @section('title','Renewable Energy Survey, Green Energy Drone Survey')	
 @section('meta')
   <meta name="description" content="Yolax infra renewable energy survey in India, is uses collect information from businesses working within the green economy."/>  
-  <meta name="keywords" content="renewable energy survey, renewable energy drone survey, green energy survey"/> 
+  <meta name="keywords" content="renewable energy survey, renewable energy drone survey, green energy survey"/>
 @endsection
 @section('content')
 <!--  Page Title -->

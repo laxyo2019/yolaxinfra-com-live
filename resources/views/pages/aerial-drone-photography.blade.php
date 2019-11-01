@@ -45,7 +45,7 @@
                   </ul>
                 </div>
                 <div class="col-xs-12 colsm-4 col-md-4 col-lg-4">
-                    <img src="{{asset('images/Drone-Research-Survey(UAV).jpg')}}" class="img-responsive service-img1">
+                    <img src="{{asset('images/drone-survey.jpg')}}" class="img-responsive service-img1">
                 </div>
             </div>
         </div>

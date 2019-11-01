@@ -152,13 +152,13 @@
                                     </li>
                                     <li>
                                       <h3>
-                                         <a href="{{url('/maintenance-managementaudit')}}">Maintenance Management Audit-</a>
+                                         <a href="{{url('/maintenance-management-audit')}}">Maintenance Management Audit-</a>
                                       </h3>
                                     </li>
 
                                     <li>
                                       <h3>
-                                        <a href="{{url('/captive-powerplant')}}">Captive Power Plant</a>
+                                        <a href="{{url('/captive-power-plant')}}">Captive Power Plant</a>
                                       </h3>
                                     </li>
 

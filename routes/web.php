@@ -12,7 +12,7 @@ Route::view('/about', 'pages.about');
 Route::view('/railway-consultancy', 'pages.railway-consultancy');
 Route::view('/feasibility-study-report', 'pages.feasibility-study-report');
 Route::view('/rail-traffic-clearance', 'pages.rail-traffic-clearance');
-Route::view('/survey-construction-plan', 'pages.survey-construction_plan');
+Route::view('/survey-construction-plan', 'pages.survey-construction-plan');
 Route::view('/detailed-project-report', 'pages.detailed-project-report');
 Route::view('/engineering-scale-plan', 'pages.engineering-scale-plan');
 Route::view('/overhead-electrification', 'pages.overhead-electrification');
@@ -26,7 +26,7 @@ Route::view('/infrastructure-survey', 'pages.infrastructure-survey');
 Route::view('/renewable-energy-survey', 'pages.renewable-energy-survey');
 Route::view('/smart-city-survey', 'pages.smart-city-survey');
 Route::view('/agriculture-survey', 'pages.agriculture-survey');
-Route::view('/repair_customization', 'pages.repair-customization');
+Route::view('/repair-customization', 'pages.repair-customization');
 Route::view('/echosounder', 'pages.echosounder');
 Route::view('/energy-efficiency-and-power-consultancy', 'pages.energy-efficiency-and-power-consultancy');
 Route::view('/energy-audit-service', 'pages.energy-audit-service');
@@ -42,8 +42,8 @@ Route::view('/third-party-construction-audit', 'pages.third-party-construction-a
 Route::view('/school-education-consulting', 'pages.school-education-consulting');
 Route::view('/school-planning-construction-assistance', 'pages.school-planning-construction-assistance');
 Route::view('/affiliation-Legal-assistance', 'pages.affiliation-Legal-assistance');
-Route::view('/Marketing&business-development', 'pages.Marketing-business-development');
-Route::view('/recruitment&selection-procedure', 'pages.recruitment-selection-procedure');
+Route::view('/Marketing&business-development', 'pages.Marketing&business-development');
+Route::view('/recruitment&selection-procedure', 'pages.recruitment&selection-procedure');
 Route::view('/management-system-consulting', 'pages.management-system-consulting');
 Route::view('/value-added-product-strategies', 'pages.value-added-product-strategies');
 Route::view('/quality-policy', 'pages.quality-policy');
@@ -60,6 +60,8 @@ Route::post('/job', 'CareersController@jobStore');
 Route::post('/job-reply', 'CareersController@jobReplyStore');
 
 Route::get('refreshcaptcha', 'LayoutController@refreshCaptcha');
+
+Route::view('/aerial-drone-photography', 'pages.aerial-drone-photography');
 
 
 // //admin section

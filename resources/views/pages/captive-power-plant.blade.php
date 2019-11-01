@@ -2,7 +2,7 @@
 @section('title','Yolax Infra service provides range of services related to captive power plants| Captive power plant.')
 @section('meta')  
   <meta name="description" content="Yolax infra captive power plants consulting services for different industries. Offering quality project management and procurement services."/>    
-  <meta name="keywords" content="green building consultants, solar power consultants, power plant consultants in India, operation and maintenance of power plant, solar energy consultant, solar power consultants, solar power consultancy, solar consulting services, SPV power plants, project commissioning, Ash handling plant,  solar power consultancy firm, solar consulting services"/> 
+  <meta name="keywords" content="green building consultants, solar power consultants, power plant consultants in India, operation and maintenance of power plant, solar energy consultant, solar power consultants, solar power consultancy, solar consulting services, SPV power plants, project commissioning, Ash handling plant,  solar power consultancy firm, solar consulting services"/>
 @endsection
 @section('content')
 <!--  Page Title -->

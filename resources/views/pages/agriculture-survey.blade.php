@@ -2,7 +2,7 @@
 @section('title','Agriculture Survey | Drones in Mining India')	
 @section('meta')
   <meta name="description" content="Yolax infra energy largest agriculture survey and drones in mining services providing company in India. with effective mine planning and operation."/>  
-  <meta name="keywords" content="drones in mining India, agriculture survey, agriculture drone survey India"/> 
+  <meta name="keywords" content="drones in mining India, agriculture survey, agriculture drone survey India"/>  
 @endsection
 @section('content')
 <!--  Page Title -->
