@@ -34,52 +34,68 @@
 		
 		<div id="contact-form">
 			<form method="post" action="{{ route('contact.store') }}" id="register">
-				{{csrf_field()}}
+				@csrf()
 
 				<div class="row">
 					<div class="col-4">
 						<div class="field">
 							<label style="font-size: 14px">Name of Contact Person:<span>*</span></label>
-							<input type="text" name="name" id="name" class="text"  value="{{old('name')}}"/>
+							<input type="text" name="name" id="name" class="text" value="{{old('name')}}"/>
 							@if($errors->has('name'))
-										<div class="error text-danger">{{ $errors->first('name') }}</div>
-								@endif
+								<div class="error text-danger">{{ $errors->first('name') }}</div>
+							@endif
 						</div>
 					</div>
 					<div class="col-4">
 						<div class="field">
 							<label style="font-size: 14px">Mobile No.: <span>*</span></label>
 							<input type="text" name="mobile" id="mobile" class="text" value="{{old('mobile')}}"/>
-								@if($errors->has('mobile'))
-										<div class="error text-danger">{{ $errors->first('mobile') }}</div>
-								@endif
+							@if($errors->has('mobile'))
+								<div class="error text-danger">{{ $errors->first('mobile') }}</div>
+							@endif
 						</div>
 					</div>
 					<div class="col-4">
 						<div class="field">
 							<label style="font-size: 14px">Email: <span>*</span></label>
 							<input type="text" name="email" id="email" class="text" value="{{old('email')}}" />
-								@if($errors->has('email'))
-										<div class="error text-danger">{{ $errors->first('email') }}</div>
-								@endif
+							@if($errors->has('email'))
+							<div class="error text-danger">{{ $errors->first('email') }}</div>
+							@endif
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="field">
+							<label style="font-size: 14px">Company Name: <span>*</span></label>
+							<input type="text" name="company_name" id="company_name" class="text" value="{{old('company_name')}}" />
+							@if($errors->has('company_name'))
+							<div class="error text-danger">{{ $errors->first('company_name') }}</div>
+							@endif
+						</div>
+					</div>
+					<div class="col-8">
+						<div class="field">
+							<label style="font-size: 14px">Address: <span>*</span></label>
+							<input type="text" name="address" id="address" class="text" value="{{old('address')}}" />
+							@if($errors->has('address'))
+							<div class="error text-danger">{{ $errors->first('address') }}</div>
+							@endif
 						</div>
 					</div>
 				</div>
-
-				<div class="field">
+				{{-- <div class="field">
 					<label style="font-size: 14px">Company  Name &amp; Location &amp; Address:<span>*</span></label>
 					<input type="text" name="company_name" id="company_name" class="text" value="{{old('company_name')}}" />
-						@if($errors->has('company_name'))
-								<div class="error text-danger">{{ $errors->first('company_name') }}</div>
-						@endif
-				</div>
-
+					@if($errors->has('company_name'))
+						<div class="error text-danger">{{ $errors->first('company_name') }}</div>
+					@endif
+				</div> --}}
 				<div class="row">
 					<div class="col-12">
-							<div class="field">
-								<label style="font-size: 14px">Write About Your Requirement or Inquiry:</label>
-								<textarea name="message" rows="30" cols="5" id="message" class="text textarea" >{{old('message')}}</textarea>
-							</div>
+						<div class="field">
+							<label style="font-size: 14px">Write About Your Requirement or Inquiry:</label>
+							<textarea name="message" rows="30" cols="5" id="message" class="text textarea" >{{old('message')}}</textarea>
+						</div>
 					</div>
 				</div>
 				

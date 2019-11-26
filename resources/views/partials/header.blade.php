@@ -36,11 +36,10 @@
             <div class="navbar mega-menu menu_section_top" role="navigation">
               <div class="container"> 
               <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="menu-container">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+              <div class="menu-container"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 
                 <!-- Navbar Brand -->
-                <div class="navbar-brand"> <a href="http://www.yolaxinfra.com/"> <img class="default-logo" src="images/logo.png" alt="Logo"> <img class="shrink-logo" src="images/logo.png" alt="Logo"> </a> </div>
+                <div class="navbar-brand"> <a href="http://www.yolaxinfra.com/"> <img class="default-logo" src="{{ asset('images/logo.png') }}"alt="Logo mkmkmk"> </a> </div>
                 <!-- ENd Navbar Brand --> 
                 
                 <!-- Header Inner Right --> 

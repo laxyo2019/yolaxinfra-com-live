@@ -18,16 +18,25 @@ class ContactController extends Controller
 
   public function store(Request $request)
   {
+    //return $request->all();
     $vdata = $request->validate([
-      'name' => 'required|max:255|regex:/^[a-zA-Z ]+$/',
-      'company_name' => 'required',
-      'email' => 'required|email|max:255',
-      'mobile' => 'required|max:10|min:10|regex:/^([0-9\s\-\+\(\)]*)$/',
-      'message' => 'required',
-      'captcha' => 'required|captcha'
+      'name'          => 'required|max:255|regex:/^[a-zA-Z ]+$/',
+      'company_name'  => 'required',
+      'address'       => 'nullable',
+      'email'         => 'required|email|max:255',
+      'mobile'        => 'required|max:10|min:10|regex:/^([0-9\s\-\+\(\)]*)$/',
+      'message'       => 'required',
+      'captcha'       => 'required|captcha'
     ]);
     
-    $contact = Contact::create($vdata);  
+    $contact = new Contact;
+    $contact->name          = $request->name;
+    $contact->email         = $request->email;
+    $contact->company_name  = $request->company_name;
+    $contact->address       = $request->address;
+    $contact->mobile        = $request->mobile;
+    $contact->message       = $request->message;
+    $contact->save();
 
     $user1 = User::find(1);
     Mail::to($user1)->send(new MailforContact($vdata));

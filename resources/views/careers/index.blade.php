@@ -1,6 +1,15 @@
 @extends('layouts.front')
 @section('title','Career - Career Opportunities')
 @section('content')
+<style type="text/css">
+b, strong {
+	font-weight: 100;
+}
+strong {
+    
+    color: red;
+}
+</style>
 
 <!--  Page Title -->
 <div id="page-title">
@@ -21,84 +30,117 @@
 
 	<!-- Standard Structure -->
 	<div class="twelve columns">
-    <div class="sixteen colomns page-image">
-        <img src="{{asset('images/career.jpg')}}">  
-    </div>
-    <div class="new-post">
-    	<h4 class="headline">Career Opportunities</h4>
-    	<p>We exist because of our people. We respect and nurture people for their growth. We are equal opportunity employer. We are committed to become an employer who value innovative people therefore, we are one of the fastest growing consulting firm.</p>
-    	<p></p>
-    	<h5>We have the opportunities in the following areas,</h5>
-    	<p></p>
-			{{-- <ul class="arrow_list">
-				@foreach($job as $jobs)
-				@if($jobs->active == 1)
-	          <li>{{$jobs->job_title}}<a data-href="{{$jobs->id}}" data-name="{{$jobs->job_title}}" class="apply button small green pull-right" id=""><i class=" icon-pencil icon-white"  ></i>Apply</a></li>
-	          @endif
-	          @endforeach
-	    </ul> --}}
-    </div>
-    @if ($errors->any())
-     @foreach ($errors->all() as $error)
-         <div class="text-danger">{{$error}}</div>
-     @endforeach
-   @endif
-   @if(session()->has('message'))
-	    <div class="alert alert-success">
-	        {{ session()->get('message') }}
+	    <div class="sixteen colomns page-image">
+	        <img src="{{asset('images/career.jpg')}}">  
 	    </div>
-	@endif
-    <div class="row justify-content-center">
-    <div class="col-md-8">
-     <div id="career">
-		<h4 class="headline">Quick Application</h4>
-		
-		<div id="contact-form">
-			<form id="careerform" action="{{url('/careerapply')}}" method="post" enctype="multipart/form-data">
-				{{csrf_field()}}
-				
-				<div class="field">
-					<label>Full Name:</label>
-					<input type="text" name="fullname" class="text" required />
+	    <div class="new-post">
+	    	@if($message = Session::get('success'))
+				<div class="alert alert-success alert-block">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					{{$message}}
 				</div>
-				
-				<div class="field">
-					<label>Email: <span>*</span></label>
-					<input type="text" name="email" class="text" required />
-				</div>
+			@endif
+	    	<h4 class="headline">Career Opportunities</h4>
+	    	<p>We exist because of our people. We respect and nurture people for their growth. We are equal opportunity employer. We are committed to become an employer who value innovative people therefore, we are one of the fastest growing consulting firm.</p>
+	    	<p></p>
+	    	<h5>We have the opportunities in the following areas,</h5>
+	    	<p></p>
+			<ul class="arrow_list">
+				@foreach($jobs as $index)
+	            <li>{{$index->job_title}}<a data-id="{{$index->id}}"  href="#" class="button small green pull-right jobIndex"><i class=" icon-pencil icon-white"  ></i>Apply</a></li>
+	            <p></p>
 
-				<div class="field">
-					<label>Phone: <span>*</span></label>
-					<input type="text" name="phone" class="text" required />
-				</div>
+	            @endforeach
+	        </ul>
 
-				<div class="field">
-					<label>Choose Profile: <span>*</span></label>
-					<input id="profile" value="" name="profile" class="form-control" readonly>
-					<input type="hidden" name="jobid" value="" id="jobid">
+	    </div>
+		<div id="careers" <?php if ($errors->isEmpty()) {  echo 'hidden'; } ?>>
+			<h4 class="headline">Quick Application</h4>
+			<div class="success-message">
+				<div class="notification success closeable">
+					<p><span>Success!</span> Your message has been sent.</p>
 				</div>
+			</div>
 
-				<div class="field">
-					<label>Upload resume: <span>*</span></label>
-					<input type="file" name="file" class="text" required />
-				</div>
-				
-				<p></p><p></p>
-				<div class="field">
-					<input class="button medium yellow" type="submit" id="send" name="career_submit" value="Submit" style="width: 20%; margin: auto;" />
-					<div class="loading"></div>
-				</div>
-<div>
-				
-				 <b> NOTE : Physical presence with original documents is mandatory at Indore office , during the recruitment process.
-Telephonic conversation will not be considered for final selection. </b>
-			    </div>
-			</form>
+			<!-- Code for form submission -->
+			<!-- Code for form submission -->
+
+			<div id="contact-form">
+				<form id="careerform" action="{{route('careers.store')}}" method="POST" enctype="multipart/form-data">
+					@csrf
+					<input type="hidden" name="job_id" value id="job_id">
+					
+					<div class="field">
+						<label>Full Name:
+							@error('name')
+					          <span class="text-danger" role="alert">
+					            <strong >* {{ $message }}</strong>
+					          </span>
+				      		@enderror
+						</label>
+						<input type="text" name="name" class="text"  />	
+					</div>
+					
+					<div class="field">
+						<label>Email: 
+							{{-- <span>*</span> --}}
+							@error('email')
+				          	<span class="text-danger" role="alert">
+				            	<strong>* {{ $message }}</strong>
+				          	</span>
+				      		@enderror
+						</label>
+						<input type="text" name="email" class="text"  />
+					</div>
+
+					<div class="field">
+						<label>Phone:
+							@error('mobileno')
+				          		<span class="text-danger" role="alert">
+				            		<strong>* {{ $message }}</strong>
+				          		</span>
+				      		@enderror
+						</label>
+						<input type="text" name="mobileno" class="text"/>
+					</div>
+
+					<div class="field">
+						<label>Address: 
+							@error('address')
+				          		<span class="text-danger" role="alert">
+				            		<strong> {{ $message }}</strong>
+				          		</span>
+				      		@enderror
+						</label>
+						<input type="textarea" name="address" class="text"  />
+					</div>
+					<div class="field">
+						<label>About: {{-- <span>*</span> --}}</label>
+						<textarea name="address" class="text"  placeholder="Tell us amazing things about you.."></textarea>
+					</div>
+
+					<div class="field">
+						<label>Upload resume: {{-- <span>*</span> --}}</label>
+						<input type="file" name="file_path" class="text" />
+					</div>
+					<!---  Alert sucess
+					<div class="alert alert-success" id="career1"> 
+							    <button type="button" class="close" data-dismiss="alert">x</button>
+							    <strong>Success! </strong>Your form has been Submitted Successfully.
+					</div>
+	                Alert sucess-->
+					<p></p><p></p>
+					<div class="field">
+						<input class="button medium yellow" type="submit" id="send" name="career_submit" value="Submit" style="width: 20%; margin: auto;" />
+						<div class="loading"></div>
+					</div>
+					<div>
+					 <b> NOTE : Physical presence with original documents is mandatory at Indore office , during the recruitment process. Telephonic conversation will not be considered for final selection. </b>
+				    </div>
+				</form>
+			</div>
 		</div>
 	</div>
-	</div>
-	 </div>
-	 </div>  
 	
 	<!-- Sidebar Start -->	
 	<div class="four columns">
@@ -114,9 +156,28 @@ Telephonic conversation will not be considered for final selection. </b>
 </div>
 <!-- End  Container -->
 
-  <script>
+  <script type="text/javascript">
            
       $(document).ready(function(){
+
+      	$('.jobIndex').on('click', function(){
+      		$('#careers').removeAttr('hidden');
+      		var job_id = $(this).attr('data-id');
+      		$.ajax({
+      			type: 'get',
+      			url: "/job-apply/"+job_id,
+      			success:function(id){
+      				//alert(id);
+					$('#job_id').val(id);
+				}
+      		})
+      	});
+
+
+
+
+
+
      $('#career').hide();
         $.ajaxSetup({
 			    headers: {

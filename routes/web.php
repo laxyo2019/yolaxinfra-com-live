@@ -6,7 +6,38 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::name('admin.')->prefix('admin')->group(function () {
+	Route::resource('jobs', 'JobsController');
+	Route::resource('job-replies', 'JobRepliesController');
+	Route::resource('contacts', 'ContactsController');
+	Route::resource('feedbacks', 'FeedbacksController');
+	Route::resource('vendors', 'VendorsController');
+	Route::get('settings/site_variables', 'HomeController@site_variables')->name('settings.site_variables');
+});
+
+//Delete contacts
+Route::delete('/admin-contact/{id}', 'AdminController@condestroy')->name('contactdel');
+Route::get('DeleteAll_contact', 'AdminController@DeleteAll_contact');
+Route::get('DeleteAll_post', 'AdminController@deleteAll_career_yolax');
+
+//For Job Applicants
+
+Route::get('/apply-for-career/{id}', 'CareersController@create')->name('apply.career');
+Route::post('apply-for-career/{id}', 'CareersController@store')->name('career.applicant');
+Route::get('job-apply/{id}', 'CareersController@application');
+
+
+//For Job replies
+
+Route::get('job-replies/{id}', 'JobRepliesController@index')->name('replies');
+Route::resource('careers', 'CareersController');
+
+//Replies document download
+
+Route::get('replies/download/{id}', 'JobRepliesController@resume')->name('resume.download');
+
+
 
 Route::view('/about', 'pages.about');
 Route::view('/railway-consultancy', 'pages.railway-consultancy');
@@ -54,7 +85,7 @@ Route::view('/clients', 'pages.clients');
 Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact', 'ContactController@store')->name('contact.store');
 
-Route::get('/careers', 'CareersController@index');
+//Route::get('/careers', 'CareersController@index');
 Route::get('/job/{job_id}', 'CareersController@jobShow');
 Route::post('/job', 'CareersController@jobStore');
 Route::post('/job-reply', 'CareersController@jobReplyStore');
