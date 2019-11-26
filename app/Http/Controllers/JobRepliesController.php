@@ -31,6 +31,7 @@ class JobRepliesController extends Controller
   }
 
   public function submit(Request $request){
+    
     $pea = DB::table('site_vars')->get();
     $this->validate($request, [
       'name' => 'required|min:6',

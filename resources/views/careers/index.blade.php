@@ -114,14 +114,31 @@ strong {
 						</label>
 						<input type="textarea" name="address" class="text"  />
 					</div>
+					<br>
 					<div class="field">
 						<label>About: {{-- <span>*</span> --}}</label>
 						<textarea name="address" class="text"  placeholder="Tell us amazing things about you.."></textarea>
 					</div>
-
+					<br>
 					<div class="field">
 						<label>Upload resume: {{-- <span>*</span> --}}</label>
 						<input type="file" name="file_path" class="text" />
+					</div>
+					<br>
+					<div class="field">
+						<label>Captcha: 
+							@error('captcha')
+				          		<span class="text-danger" role="alert">
+				            		<strong> {{ $message }}</strong>
+				          		</span>
+				      		@enderror
+						</label>
+						
+						<div class="captcha col-4 row">
+							<span>{!! captcha_img('flat') !!}</span>
+						{{-- <img src="images/refresh.png" alt="reload" class="refresh" style="cursor:pointer;" /> --}}
+						<input type="text" placeholder="Enter Code" id="captcha" name="captcha" class="inputcaptcha"  autocomplete="off">
+					</div>
 					</div>
 					<!---  Alert sucess
 					<div class="alert alert-success" id="career1"> 

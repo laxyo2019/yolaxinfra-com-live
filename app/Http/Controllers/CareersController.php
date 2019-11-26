@@ -23,24 +23,24 @@ class CareersController extends Controller
   public function application($id){
 
     return $id;
-    //return json_encode($id);
-
   }
 	public function store(Request $request){
 
-    /*return $request->job_id;*/
+
 		$this->validate($request,[
             'name'    => 'required',       
             'email'   => 'required|email|max:255',
             'mobileno'=> 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
-            'address' => 'required',
+            'captcha' => 'required|captcha',
           	[    
             	'name.required' => 'Name should be filled',
               'mobileno.required' => 'Mobile No. should be filled',
           	] ]
       	);
+    $job = Job::where('id', $request->job_id)->first();
 
-        if($request->hasFile('file_path')){
+    if(!empty($job)){
+      if($request->hasFile('file_path')){
 
           $dir      = 'careers/'.date("Y").'/'.date("F");
           $file_ext = $request->file('file_path')->getClientOriginalExtension();
@@ -51,7 +51,7 @@ class CareersController extends Controller
           $path = null;
         }
 
-      	$careers = new Career;
+        $careers = new Career;
         $careers->job_id    = $request->job_id;
         $careers->name      = $request->name;
         $careers->email     = $request->email;
@@ -63,6 +63,13 @@ class CareersController extends Controller
         $careers->save();
 
         return redirect()->route('careers.index')->with('success', 'Thank You for contacting us, we will contact you soon...');
+    }else{
+      return abort(404);
+    }
+
+        
+
+        
 	}
 
 	public function show($id){
