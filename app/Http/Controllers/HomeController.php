@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Job;
+use App\Models\Contact;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $jobs = Job::all()->count();
+        $contacts = Contact::all()->count();
+        return view('admin.index', compact('jobs', 'contacts'));
     }
 }

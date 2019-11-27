@@ -15,18 +15,19 @@ class CareersController extends Controller
 	}
 
 	public function create( $id){
+
 		$job = Job::find( $id);
 		return view('careers.create', compact('job'));
 
 	}
-
+/*
   public function application($id){
 
     return $id;
-  }
+  }*/
+
 	public function store(Request $request){
-
-
+    //return 65;
 		$this->validate($request,[
             'name'    => 'required',       
             'email'   => 'required|email|max:255',
@@ -62,9 +63,9 @@ class CareersController extends Controller
         $careers->created_at= date('Y-m-d H:i:s');
         $careers->save();
 
-        return redirect()->route('careers.index')->with('success', 'Thank You for contacting us, we will contact you soon...');
+        return back()->with('success', 'Thank You for contacting us, we will contact you soon...');
     }else{
-      return abort(404);
+      return back()->with('failure', 'You can not apply for this job.');
     }
 
         
@@ -72,11 +73,11 @@ class CareersController extends Controller
         
 	}
 
-	public function show($id){
+	/*public function show($id){
 
         $job = Job::find($id);
         return view('careers.show', compact('job'));
-    }
+    }*/
 
 
 

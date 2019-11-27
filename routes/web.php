@@ -38,7 +38,6 @@ Route::resource('careers', 'CareersController');
 Route::get('replies/download/{id}', 'JobRepliesController@resume')->name('resume.download');
 
 
-
 Route::view('/about', 'pages.about');
 Route::view('/railway-consultancy', 'pages.railway-consultancy');
 Route::view('/feasibility-study-report', 'pages.feasibility-study-report');

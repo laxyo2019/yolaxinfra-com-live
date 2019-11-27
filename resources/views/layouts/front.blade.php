@@ -13,22 +13,22 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.bxSlider.js') }}"></script>
-   
+
     <script src="{{ asset('js/flexslider.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.js') }}"></script>
-      
+    
     <!-- Fonts -->
 
 
-<!-- Styles -->
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-   <link rel="stylesheet" href="css/bootstrap.css">
-      <link rel="stylesheet" type="text/css"  href="{{asset('css/style.css')}}">
-      <link rel="stylesheet" type="text/css"  href="{{asset('css/header-v6.css')}}">
-      <link rel="stylesheet" type="text/css"  href="{{asset('css/bxlogo.css')}}">
-      <link rel="stylesheet" type="text/css"  href="{{asset('css/mystyle.css')}}">
-      <link rel="stylesheet" type="text/css"  href="{{asset('css/flexslider.css')}}">
-      <link rel="stylesheet" type="text/css"  href="{{asset('css/owl.carousel.css')}}">
+  <!-- Styles-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css"  href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" type="text/css"  href="{{asset('css/header-v6.css')}}">
+  <link rel="stylesheet" type="text/css"  href="{{asset('css/bxlogo.css')}}">
+  <link rel="stylesheet" type="text/css"  href="{{asset('css/mystyle.css')}}">
+  <link rel="stylesheet" type="text/css"  href="{{asset('css/flexslider.css')}}">
+  <link rel="stylesheet" type="text/css"  href="{{asset('css/owl.carousel.css')}}">
       
       <!-- Favicon -->
       <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/png" sizes="16x16">
